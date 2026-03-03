@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "devops-demo-app"
-        CONTAINER_NAME = "devops-demo-container"
+        IMAGE_NAME = "devops-demo-app-2"
+        CONTAINER_NAME = "devops-demo-container-2"
     }
 
     stages {
@@ -35,7 +35,7 @@ stage('Checkout Code') {
             steps {
                 echo "Running New Container..."
                 sh """
-                docker run -d -p 5000:5000 --name ${CONTAINER_NAME} ${IMAGE_NAME}
+                docker run -d -p 5001:5000 --name ${CONTAINER_NAME} ${IMAGE_NAME}
                 """
             }
         }
